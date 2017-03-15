@@ -1,10 +1,3 @@
-/*********************************************************************
- ** Program Filename: smallsh.c
- ** Author: Rachel Williams
- ** Date: 3 - 5 - 17
- ** Description: smallsh assignment
- *********************************************************************/
-
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <unistd.h>
@@ -122,7 +115,7 @@ void main()
 				{
 					//beep boop fork error
 					case -1:
-						perror("Hull breach!");
+						perror("Fork error, exiting");
 						exit(1);
 					break;
 
@@ -399,7 +392,7 @@ void main()
  exited
  ** Parameters: int signo, the number of the signal that was caught
  ** Pre-Conditions: a SIGTSTP signal has been caught
- ** Post-Conditions: _bgFlag is set to 1 or 0 depending on it's pre-function
+ ** Post-Conditions: _bgFlag is set to 1 or 0 depending on its pre-function
  call state, and an informative message about this change is printed to stdout
  *********************************************************************/
 void catchSIGTSTP(int signo)
